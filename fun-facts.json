@@ -1,0 +1,194 @@
+{
+    "facts": [
+        {
+            "fact": "A bolt of lightning contains enough energy to toast 100,000 slices of bread.",
+            "category": "Physics",
+            "source": "Weather Studies"
+        },
+        {
+            "fact": "Wombat poop is cube-shaped to prevent it from rolling away.",
+            "category": "Animal Biology",
+            "source": "Australian Wildlife Research"
+        },
+        {
+            "fact": "The shortest war in history was between Britain and Zanzibar on August 27, 1896. Zanzibar surrendered after 38 minutes.",
+            "category": "History",
+            "source": "Military Records"
+        },
+        {
+            "fact": "There are more stars in the universe than grains of sand on all the beaches on Earth.",
+            "category": "Astronomy",
+            "source": "NASA"
+        },
+        {
+            "fact": "Avocados are toxic to most birds.",
+            "category": "Animal Biology",
+            "source": "Veterinary Research"
+        },
+        {
+            "fact": "Coca-Cola was the first soft drink consumed in space.",
+            "category": "Space",
+            "source": "NASA"
+        },
+        {
+            "fact": "The inventor of the Pringles can is buried in one.",
+            "category": "Trivia",
+            "source": "Consumer Packaging History"
+        },
+        {
+            "fact": "Humans share approximately 60% of their DNA with bananas.",
+            "category": "Genetics",
+            "source": "Human Genome Project"
+        },
+        {
+            "fact": "The smell of freshly cut grass is actually a plant distress signal.",
+            "category": "Botany",
+            "source": "Plant Science Journal"
+        },
+        {
+            "fact": "Antarctica is the only continent without a native species of ants.",
+            "category": "Nature",
+            "source": "Environmental Studies"
+        },
+        {
+            "fact": "Butterflies can taste with their feet.",
+            "category": "Entomology",
+            "source": "National Geographic"
+        },
+        {
+            "fact": "Bubble wrap was originally intended to be used as wallpaper.",
+            "category": "Inventions",
+            "source": "Industrial Design Archives"
+        },
+        {
+            "fact": "Venus is the hottest planet in the solar system, even though Mercury is closer to the Sun.",
+            "category": "Space",
+            "source": "NASA"
+        },
+        {
+            "fact": "Pineapples take about two years to grow and mature.",
+            "category": "Agriculture",
+            "source": "Horticultural Studies"
+        },
+        {
+            "fact": "Octopuses have been known to escape aquariums and return to the ocean.",
+            "category": "Marine Biology",
+            "source": "Aquarium Research"
+        },
+        {
+            "fact": "There’s enough DNA in the human body to stretch from the Sun to Pluto and back—17 times.",
+            "category": "Genetics",
+            "source": "Human Genome Project"
+        },
+        {
+            "fact": "Tigers have striped skin, not just striped fur.",
+            "category": "Animal Biology",
+            "source": "Wildlife Studies"
+        },
+        {
+            "fact": "Hot water can freeze faster than cold water, known as the Mpemba effect.",
+            "category": "Physics",
+            "source": "Thermal Dynamics Research"
+        },
+        {
+            "fact": "Bananas are berries, but strawberries aren't.",
+            "category": "Botany",
+            "source": "Fruit Classification Studies"
+        },
+        {
+            "fact": "Honey never spoils. Archaeologists have found pots of honey in ancient Egyptian tombs that are over 3,000 years old and still edible.",
+            "category": "Food Science",
+            "source": "Archaeological Research"
+        },
+        {
+            "fact": "A day on Venus is longer than a year on Venus.",
+            "category": "Astronomy",
+            "source": "NASA"
+        },
+        {
+            "fact": "The Eiffel Tower can be 15 cm taller during the summer due to the expansion of iron in the heat.",
+            "category": "Engineering",
+            "source": "Structural Engineering Studies"
+        },
+        {
+            "fact": "Humans and giraffes have the same number of neck vertebrae.",
+            "category": "Anatomy",
+            "source": "Comparative Anatomy Research"
+        },
+        {
+            "fact": "The inventor of the frisbee was turned into a frisbee after he died.",
+            "category": "Trivia",
+            "source": "Consumer Product History"
+        },
+        {
+            "fact": "A group of flamingos is called a 'flamboyance'.",
+            "category": "Animal Biology",
+            "source": "Ornithology Studies"
+        },
+        {
+            "fact": "The longest time between two twins being born is 87 days.",
+            "category": "Medical Records",
+            "source": "Guinness World Records"
+        },
+        {
+            "fact": "The shortest commercial flight in the world is in Scotland, lasting just 1.5 minutes.",
+            "category": "Aviation",
+            "source": "Airline Records"
+        },
+        {
+            "fact": "The inventor of the microwave appliance received only $2 for his discovery.",
+            "category": "Inventions",
+            "source": "Patent Records"
+        },
+        {
+            "fact": "A single strand of spaghetti is called a 'spaghetto'.",
+            "category": "Food",
+            "source": "Culinary Terminology"
+        },
+        {
+            "fact": "The heart of a shrimp is located in its head.",
+            "category": "Marine Biology",
+            "source": "Aquatic Studies"
+        },
+        {
+            "fact": "A jiffy is an actual unit of time. It is 1/100th of a second.",
+            "category": "Physics",
+            "source": "Time Measurement Research"
+        },
+        {
+            "fact": "A group of crows is called a 'murder'.",
+            "category": "Animal Biology",
+            "source": "Ornithology Studies"
+        },
+        {
+            "fact": "The unicorn is the national animal of Scotland.",
+            "category": "Cultural Studies",
+            "source": "National Symbols Research"
+        },
+        {
+            "fact": "A crocodile cannot stick its tongue out.",
+            "category": "Animal Biology",
+            "source": "Reptile Studies"
+        },
+        {
+            "fact": "The first oranges weren’t orange. They were green.",
+            "category": "Botany",
+            "source": "Fruit Cultivation Studies"
+        },
+        {
+            "fact": "A small child could swim through the veins of a blue whale.",
+            "category": "Marine Biology",
+            "source": "Whale Anatomy Research"
+        },
+        {
+            "fact": "The inventor of the light bulb, Thomas Edison, was afraid of the dark.",
+            "category": "Trivia",
+            "source": "Inventor Biographies"
+        },
+        {
+            "fact": "A bolt of lightning is five times hotter than the surface of the sun.",
+            "category": "Physics",
+            "source": "Weather Studies"
+        }
+    ]
+}

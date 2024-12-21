@@ -1,173 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Modern Fun Fact Generator</title>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
-    
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+  </head>
 
-    :root {
-      --primary: #4F46E5;
-      --primary-dark: #4338CA;
-      --background: #F9FAFB;
-      --card: #FFFFFF;
-      --text: #1F2937;
-      --text-secondary: #6B7280;
-    }
-
-    body {
-      font-family: 'Inter', sans-serif;
-      background-color: var(--background);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-      padding: 1rem;
-      line-height: 1.5;
-    }
-
-    .container {
-      background-color: var(--card);
-      padding: 2.5rem;
-      border-radius: 20px;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
-      text-align: center;
-      max-width: 700px;
-      width: 100%;
-    }
-
-    h1 {
-      font-size: 2.25rem;
-      font-weight: 700;
-      color: var(--text);
-      margin-bottom: 0.5rem;
-    }
-
-    .subtitle {
-      color: var(--text-secondary);
-      margin-bottom: 2rem;
-    }
-
-    .fact-container {
-      background-color: var(--background);
-      padding: 2.5rem;
-      border-radius: 15px;
-      margin-bottom: 2rem;
-      position: relative;
-      transition: transform 0.3s ease;
-    }
-
-    .fact-container:hover {
-      transform: translateY(-5px);
-    }
-
-    #fact {
-      font-size: 1.25rem;
-      color: var(--text);
-      margin-bottom: 1rem;
-    }
-
-    .controls {
-      display: flex;
-      gap: 1rem;
-      justify-content: center;
-    }
-
-    button {
-      background-color: var(--primary);
-      color: white;
-      border: none;
-      padding: 1rem 2rem;
-      border-radius: 10px;
-      font-size: 1rem;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-
-    button:hover {
-      background-color: var(--primary-dark);
-      transform: translateY(-2px);
-    }
-
-    .share-btn {
-      background-color: transparent;
-      border: 2px solid var(--primary);
-      color: var(--primary);
-    }
-
-    .share-btn:hover {
-      background-color: var(--primary);
-      color: white;
-    }
-
-    .category-badge {
-      position: absolute;
-      top: 1rem;
-      left: 1rem;
-      background-color: #EEF2FF;
-      color: var(--primary);
-      padding: 0.5rem 1rem;
-      border-radius: 20px;
-      font-size: 0.875rem;
-      font-weight: 600;
-    }
-
-    .fade {
-      animation: fadeIn 0.5s ease-in;
-    }
-
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(10px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    .like-counter {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.5rem;
-      color: var(--text-secondary);
-      margin-top: 1rem;
-    }
-
-    .like-btn {
-      background: none;
-      border: none;
-      color: var(--text-secondary);
-      padding: 0.5rem;
-      cursor: pointer;
-    }
-
-    .like-btn.active {
-      color: #EF4444;
-    }
-  </style>
-</head>
 <body>
   <div class="container">
     <h1>Fun Fact Generator</h1>
     <p class="subtitle">Discover amazing facts about our world!</p>
+    <div class="error-message" id="error-message">
+      <i class="fas fa-exclamation-circle"></i>
+      <span>Failed to load facts. Please try again later.</span>
+    </div>
+    
+    <div class="loading" id="loading">
+      <i class="fas fa-circle-notch loading-spinner"></i>
+      Loading facts...
+    </div>
+
     <div class="fact-container">
       <span class="category-badge" id="category"></span>
       <p id="fact"></p>
+      <p class="source" id="source"></p>
       <div class="like-counter">
         <button class="like-btn" id="like-btn">
           <i class="fas fa-heart"></i>
@@ -175,12 +34,13 @@
         <span id="likes">0</span> people found this interesting
       </div>
     </div>
+
     <div class="controls">
-      <button id="generate-btn">
+      <button id="generate-btn" disabled>
         <i class="fas fa-random"></i>
         Generate New Fact
       </button>
-      <button class="share-btn" id="share-btn">
+      <button class="share-btn" id="share-btn" disabled>
         <i class="fas fa-share"></i>
         Share
       </button>
@@ -188,62 +48,60 @@
   </div>
 
   <script>
-    const funFacts = [
-      {
-        fact: "The world's quietest room is located at Microsoft's headquarters in Washington state. The room is so quiet that you can hear your own heart beating.",
-        category: "Technology",
-      },
-      {
-        fact: "The first product to have a barcode was Wrigley's gum.",
-        category: "History",
-      },
-      {
-        fact: "Apples are more effective at waking you up in the morning than coffee.",
-        category: "Health",
-      },
-      {
-        fact: "A sneeze travels at about 100 miles per hour.",
-        category: "Science",
-      },
-      {
-        fact: "The longest English word without a vowel is 'rhythms'.",
-        category: "Language",
-      },
-      {
-        fact: "Honeybees can recognize human faces.",
-        category: "Nature",
-      },
-      {
-        fact: "The average person spends 6 months of their lifetime waiting for red lights to turn green.",
-        category: "Lifestyle",
-      },
-      {
-        fact: "A day on Venus is longer than its year.",
-        category: "Space",
-      },
-    ];
-
     const factElement = document.getElementById('fact');
     const categoryElement = document.getElementById('category');
+      const sourceElement = document.getElementById('source');
     const generateButton = document.getElementById('generate-btn');
     const shareButton = document.getElementById('share-btn');
     const likeButton = document.getElementById('like-btn');
     const likesCount = document.getElementById('likes');
+      const errorMessage = document.getElementById('error-message');
+      const loadingIndicator = document.getElementById('loading');
 
+      let facts = [];
     let currentLikes = 0;
     let isLiked = false;
 
+      async function loadFacts() {
+        try {
+          loadingIndicator.style.display = 'flex';
+          errorMessage.style.display = 'none';
+          generateButton.disabled = true;
+          shareButton.disabled = true;
+
+          const response = await fetch('fun-facts.json');
+          if (!response.ok) {
+            throw new Error('Failed to load facts');
+          }
+
+          const data = await response.json();
+          facts = data.facts;
+
+          generateButton.disabled = false;
+          shareButton.disabled = false;
+          generateFunFact();
+        } catch (error) {
+          console.error('Error loading facts:', error);
+          errorMessage.style.display = 'block';
+        } finally {
+          loadingIndicator.style.display = 'none';
+        }
+      }
+
     function generateFunFact() {
-      const randomIndex = Math.floor(Math.random() * funFacts.length);
-      const { fact, category } = funFacts[randomIndex];
-      
+      if (facts.length === 0) return;
+
+      const randomIndex = Math.floor(Math.random() * facts.length);
+      const { fact, category, source } = facts[randomIndex];
+
       factElement.classList.remove('fade');
       void factElement.offsetWidth; // Trigger reflow
       factElement.classList.add('fade');
-      
+
       factElement.textContent = fact;
       categoryElement.textContent = category;
-      
+      sourceElement.textContent = `Source: ${source}`;
+
       // Reset likes for new fact
       currentLikes = Math.floor(Math.random() * 100);
       isLiked = false;
@@ -278,8 +136,9 @@
       updateLikeDisplay();
     });
 
-    // Generate initial fun fact
-    generateFunFact();
+      // Load facts when the page loads
+      loadFacts();
   </script>
 </body>
+
 </html>
